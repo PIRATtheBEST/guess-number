@@ -10,6 +10,8 @@ class ComposerStaticInit1764983bd41b41484095f5a4b3d8ed03
         'be01b9b16925dcb22165c40b46681ac6' => __DIR__ . '/..' . '/wp-cli/php-cli-tools/lib/cli/cli.php',
         '4abd4f15a481109cacad663751c160c8' => __DIR__ . '/../..' . '/src/Controller.php',
         '1d5d4e8fb8b13fba2fc8a1ba93ea0ce5' => __DIR__ . '/../..' . '/src/View.php',
+        '35c6e98d8f6d03525bb815e4fcb41ad4' => __DIR__ . '/../..' . '/src/DataBase.php',
+        'e4b1da2452c6c3cf60764ae10967fd1b' => __DIR__ . '/../..' . '/src/Model.php',
     );
 
     public static $prefixesPsr0 = array (

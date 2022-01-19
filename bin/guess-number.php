@@ -8,5 +8,6 @@ if (file_exists($autoloadPathForGithub)) {
 } else {
     require_once($autoloadPathForPackagist);
 }
-    use function piratthebest\guessNumber\Controller\key;
-key();
+    use function piratthebest\guessNumber\Controller\startGame;
+
+    startGame();
