@@ -10,4 +10,4 @@ if (file_exists($autoloadPathForGithub)) {
 }
     use function piratthebest\guessNumber\Controller\startGame;
 
-    startGame();
+    startGame($argv);

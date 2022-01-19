@@ -2,15 +2,11 @@
 
 namespace piratthebest\guessNumber\Model;
 
-use function piratthebest\guessNumber\View\greeting;
 use function piratthebest\guessNumber\View\endGame;
 use function piratthebest\guessNumber\View\MenuGame;
 use function piratthebest\guessNumber\DataBase\insertNewGame;
 use function piratthebest\guessNumber\DataBase\addAttemptInDB;
-use function piratthebest\guessNumber\DataBase\outputListGame;
 use function piratthebest\guessNumber\DataBase\updateInfoGame;
-use function piratthebest\guessNumber\DataBase\outputListGameTop;
-use function piratthebest\guessNumber\DataBase\checkGameid;
 
 function setting()
 {
@@ -75,43 +71,5 @@ function replayGame($user_name)
         MenuGame();
     } else {
         replayGame($user_name);
-    }
-}
-
-function commandHandler($getCommand)
-{
-    $checkCommand = false;
-
-    while ($checkCommand === false) {
-        if ($getCommand === "--new") {
-            greeting();
-
-            $checkCommand = true;
-        } elseif ($getCommand === "--list") {
-            outputListGame();
-        } elseif ($getCommand === "--list win") {
-            outputListGame("win");
-        } elseif ($getCommand === "--list loose") {
-            outputListGame("loss");
-        } elseif ($getCommand === "--top") {
-            outputListGameTop();
-        } elseif (preg_match('/(^--replay [0-9]+$)/', $getCommand) != 0) {
-            $temp = explode(' ', $getCommand);
-            $id = $temp[1];
-
-            unset($temp);
-
-            $checkId = checkGameid($id);
-
-            if ($checkId) {
-                showGame($checkId);
-            } else {
-                echo "Такой игры не существует" . PHP_EOL;
-            }
-        } elseif ($getCommand === "--exit") {
-            exit;
-        }
-
-        $getCommand = \cli\prompt("Введите ключ");
     }
 }
